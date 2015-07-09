@@ -57,8 +57,8 @@ local function GetInformation()
   local hasLicense = "icon16/page.png"
   local noLicense = "icon16/page_delete.png"
 
-  draw.SimpleText( playerNick, "Positions", 155, 887.5, hudcolors.text_black, TEXT_ALIGN_CENTER )
-  draw.SimpleText( playerTeam, "Positions", 155, 1014, hudcolors.text_black, TEXT_ALIGN_CENTER )
+  draw.SimpleText( playerNick, "Positions", 156, 887.5, hudcolors.text_black, TEXT_ALIGN_CENTER )
+  draw.SimpleText( playerTeam, "Positions", 156, 1014, hudcolors.text_black, TEXT_ALIGN_CENTER )
   draw.SimpleText( "Money:", "Money", 242, 910, hudcolors.text_black )
   draw.SimpleText( DarkRP.formatMoney( playerMoney ), "Money", 290, 910, hudcolors.text_black )
   draw.SimpleText( "Salary:", "Money", 242, 929, hudcolors.text_black )
@@ -66,27 +66,27 @@ local function GetInformation()
 
 
   if ply:IsUserGroup( "user" ) then
-    draw.SimpleText(  "User", "Positions", 155, 1034, hudcolors.text_black, TEXT_ALIGN_CENTER )
+    draw.SimpleText(  "User", "Positions", 156, 1034, hudcolors.text_black, TEXT_ALIGN_CENTER )
     surface.SetMaterial( Material( userIcon ) )
     surface.DrawTexturedRect( 378, 1040, 16, 16 )
   elseif ply:IsUserGroup( "operator" ) then
-    draw.SimpleText(  "Operator", "Positions", 155, 1034, hudcolors.text_black, TEXT_ALIGN_CENTER )
+    draw.SimpleText(  "Operator", "Positions", 156, 1034, hudcolors.text_black, TEXT_ALIGN_CENTER )
     surface.SetMaterial( Material( adminIcon ) )
     surface.DrawTexturedRect( 378, 1040, 16, 16 )
   elseif ply:IsUserGroup( "admin" ) then
-    draw.SimpleText(  "Admin", "Positions", 155, 1034, hudcolors.text_black, TEXT_ALIGN_CENTER )
+    draw.SimpleText(  "Admin", "Positions", 156, 1034, hudcolors.text_black, TEXT_ALIGN_CENTER )
     surface.SetMaterial( Material( adminIcon ) )
     surface.DrawTexturedRect( 378, 1040, 16, 16 )
   elseif ply:IsUserGroup( "superadmin" ) then
-    draw.SimpleText(  "Super Admin", "Positions", 155, 1034, hudcolors.text_black, TEXT_ALIGN_CENTER )
+    draw.SimpleText(  "Super Admin", "Positions", 156, 1034, hudcolors.text_black, TEXT_ALIGN_CENTER )
     surface.SetMaterial( Material( adminIcon ) )
     surface.DrawTexturedRect( 378, 1040, 16, 16 )
   elseif ply:IsUserGroup( "developer" ) then
-    draw.SimpleText(  "Developer", "Positions", 155, 1034, hudcolors.text_black, TEXT_ALIGN_CENTER )
+    draw.SimpleText(  "Developer", "Positions", 156, 1034, hudcolors.text_black, TEXT_ALIGN_CENTER )
     surface.SetMaterial( Material( adminIcon ) )
     surface.DrawTexturedRect( 378, 1040, 16, 16 )
   else
-    draw.SimpleText(  "No Rank", "Positions", 155, 1034, hudcolors.text_black, TEXT_ALIGN_CENTER )
+    draw.SimpleText(  "No Rank", "Positions", 156, 1034, hudcolors.text_black, TEXT_ALIGN_CENTER )
   end
 
   if ply:getDarkRPVar("HasGunlicense") then
