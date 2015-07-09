@@ -60,9 +60,9 @@ local function GetInformation()
   draw.SimpleText( playerNick, "Positions", 155, 887.5, hudcolors.text_black, TEXT_ALIGN_CENTER )
   draw.SimpleText( playerTeam, "Positions", 155, 1014, hudcolors.text_black, TEXT_ALIGN_CENTER )
   draw.SimpleText( "Money:", "Money", 242, 910, hudcolors.text_black )
-  draw.SimpleText( playerMoney, "Money", 290, 910, hudcolors.text_black )
+  draw.SimpleText( DarkRP.formatMoney( playerMoney ), "Money", 290, 910, hudcolors.text_black )
   draw.SimpleText( "Salary:", "Money", 242, 929, hudcolors.text_black )
-  draw.SimpleText( playerSalary, "Money", 290, 929, hudcolors.text_black )
+  draw.SimpleText( DarkRP.formatMoney( playerSalary ), "Money", 290, 929, hudcolors.text_black )
 
 
   if ply:IsUserGroup( "user" ) then
@@ -142,7 +142,7 @@ hook.Add( "HUDPaint", "playerModel", function()
   if !playerModel || !ispanel( playerModel ) then
     playerModel = vgui.Create( "DModelPanel" )
     playerModel:SetSize( 90, 90 )
-    playerModel:SetPos( 110, 914 )
+    playerModel:SetPos( 116, 914 )
     playerModel:SetModel( model )
     playerModel.Model = model
     function playerModel:LayoutEntity( Entity ) return end
@@ -150,7 +150,7 @@ hook.Add( "HUDPaint", "playerModel", function()
 
   local headpos = playerModel.Entity:GetBonePosition( playerModel.Entity:LookupBone( "ValveBiped.Bip01_Head1" ) )
     playerModel:SetLookAt( headpos )
-    playerModel:SetCamPos( headpos-Vector( -15, 0, 0 ) )
+    playerModel:SetCamPos( headpos-Vector( -15, 5, 0 ) )
     playerModel.Entity:SetEyeTarget( headpos-Vector( -15, 0, 0 ) )
 
   if ply:GetModel() != playerModel.Model then
