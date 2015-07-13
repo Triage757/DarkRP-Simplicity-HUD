@@ -1,11 +1,8 @@
 ////////////////////////////////////////////////////////////////
 //   Author: Triage                                            /
 //   Addon: Simplicity hud                                     /
-//   Version: 0.15                                             /
+//   Version: 0.5                                              /
 ////////////////////////////////////////////////////////////////
-
-ply = LocalPlayer()
-
 
 local hideDarkRPElements = {
   ["DarkRP_LocalPlayerHUD"] = false,
@@ -51,7 +48,7 @@ end
 
 local function GetInformation()
   local playerNick = LocalPlayer():Nick()
-  local playerTeam = team.GetName( ply:Team() )
+  local playerTeam = team.GetName( LocalPlayer():Team() )
   local playerMoney = LocalPlayer():getDarkRPVar( "money" )
   local playerSalary = LocalPlayer():getDarkRPVar( "salary" )
 
@@ -67,7 +64,7 @@ local function GetInformation()
   draw.SimpleText( "Salary:", "Money", 242, 929, hudcolors.text_black )
   draw.SimpleText( DarkRP.formatMoney( playerSalary ), "Money", 290, 929, hudcolors.text_black )
 
-
+  local ply = LocalPlayer()
   if ply:IsUserGroup( "user" ) then
     draw.SimpleText(  "User", "Positions", 156, 1034, hudcolors.text_black, TEXT_ALIGN_CENTER )
     surface.SetMaterial( Material( userIcon ) )
@@ -102,10 +99,10 @@ local function GetInformation()
 end
 
 local function Vitals()
+  local ply = LocalPlayer()
   local playerHealth = LocalPlayer():Health()
   local playerArmor = LocalPlayer():Armor()
   local maxHealth = LocalPlayer():GetMaxHealth()
-  local playedSound = surface.PlaySound( "HL1/fvox/armor_gone.wav" )
   local maxArmor = 100
   local maxWidth = 150
   local hw = playerHealth / maxHealth * maxWidth -- Do not touch this equation. If you want to change the width, do so with the above variable. Same goes for the other variable below
