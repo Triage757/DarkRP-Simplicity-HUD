@@ -1,8 +1,11 @@
 ////////////////////////////////////////////////////////////////
 //   Author: Triage                                            /
 //   Addon: Simplicity hud                                     /
-//   Version: 0.10                                             /
+//   Version: 0.5                                              /
 ////////////////////////////////////////////////////////////////
+
+ply = LocalPlayer()
+
 
 local hideDarkRPElements = {
   ["DarkRP_LocalPlayerHUD"] = false,
@@ -102,6 +105,7 @@ local function Vitals()
   local playerHealth = LocalPlayer():Health()
   local playerArmor = LocalPlayer():Armor()
   local maxHealth = LocalPlayer():GetMaxHealth()
+  local playedSound = surface.PlaySound( "HL1/fvox/armor_gone.wav" )
   local maxArmor = 100
   local maxWidth = 150
   local hw = playerHealth / maxHealth * maxWidth -- Do not touch this equation. If you want to change the width, do so with the above variable. Same goes for the other variable below
