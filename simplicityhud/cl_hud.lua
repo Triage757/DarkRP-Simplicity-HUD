@@ -5,7 +5,7 @@
 ////////////////////////////////////////////////////////////////
 
 local hideDarkRPElements = {
-  ["DarkRP_LocalPlayerHUD"] = false,
+  ["DarkRP_LocalPlayerHUD"] = true,
 }
 
 local hideDefaultHud = {
